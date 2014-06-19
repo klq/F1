@@ -1,0 +1,12 @@
+html, body {
+    font: arial;
+}
+
+
+tr, td, th{
+    vertical-align: center;
+}
+
+small {
+    color: #777    
+}

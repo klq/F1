@@ -1,7 +1,14 @@
 html, body {
-    font: arial;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
 }
 
+h3 {
+    font-family: "Lobster"; 
+    font-style: normal;
+    font-weight: 400;
+}
 
 tr, td, th{
     vertical-align: center;
@@ -9,4 +16,18 @@ tr, td, th{
 
 small {
     color: #777    
+}
+
+.container-fluid {
+    width:700px;
+    margin: 0 auto;
+}
+
+.app-container {
+    width: 700px;
+    margin: 0 auto;
+}
+
+.below-app p {
+    line-height: 1.6;
 }

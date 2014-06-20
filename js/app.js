@@ -6,8 +6,8 @@
         $scope.nameFilter = null;
 
         $scope.init = function () {            
-            $scope.driver_standings = [];//driver standings
-            $scope.team_standings = [];//team standings
+            $scope.driver_standings = [];
+            $scope.team_standings = [];
             
             //Driver API Call
             $http.jsonp('http://ergast.com/api/f1/current/driverStandings'+ '.json?callback=JSON_CALLBACK').success(function(data){
@@ -32,6 +32,16 @@
             });
         };
         
+    });
+
+    app.controller('PanelController', function($scope){
+        $scope.tab = 1;
+        $scope.setTab = function(setTab) {
+            $scope.tab = setTab;
+        };
+        $scope.isTab = function(checkTab) {
+            return $scope.tab === checkTab;
+        };
     });
 
 

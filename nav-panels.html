@@ -1,0 +1,30 @@
+<!-- Nav Panels for Driver and Team Standings -->
+<section ng-controller="PanelController">
+<!--     <nav class="navbar navbar-default"> -->
+       <!--  <div class="container"> -->
+    
+            <!-- Panel Selection List -->
+            <ul class="nav nav-pills">
+                <li ng-class="{ active: isTab(1)}"> 
+                    <a href ng-click="setTab(1)">Driver</a> 
+                </li>
+                <li ng-class="{ active: isTab(2)}">
+                    <a href ng-click="setTab(2)">Team</a>
+                </li>
+                <li ng-class="{ active: isTab(3)}"> 
+                    <a href ng-click="setTab(3)">Race</a> 
+                </li>
+        
+            </ul>
+            
+            <!-- Driver Standings -->
+            <div class="panel" ng-include="'driver-standings.html'" ng-show="isTab(1)">
+            </div>
+        
+            <div class="panel" ng-include="'team-standings.html'" ng-show="isTab(2)">
+            </div>
+        <!-- </div> -->
+    <!-- </nav> -->
+    
+
+</section>

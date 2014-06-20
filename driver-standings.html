@@ -1,0 +1,46 @@
+<!-- Driver Standings Panel -->
+<div class="search-box pull-right">
+    <input type="text" ng-model="searchTerm" placeholder="Search Driver..."/>
+</div>
+
+<h3>Formula One 2014 Driver Standings</h3>
+<table class="table table-hover table-condensed">
+    <thead>
+      <tr>
+        <th colspan="3">
+            <p> 
+                <em>Season: </em> <small>{{season}}</small> 
+                <em> Round: </em> <small>{{round}}</small> 
+            </p>
+            <p> <em>As of: &nbsp; </em> <small>{{ dateNow | date:'MM/dd/yyyy @ h:mma'}}</small> 
+            </p>
+        </th>
+        <th>Team</th>
+        <th>Points</th>
+        <th>Wins</th>
+        <th>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat='stand in driver_standings | filter: searchTerm'>
+        <th>{{stand.position}}</th>
+        <td>
+            <div>
+                <span>
+                    <a href="#">{{stand.Driver.givenName}} {{stand.Driver.familyName}}</a>
+                </span>
+            <!-- <span><small> - {{stand.Constructors[0].name}}</small></span> -->
+            </div>
+        </td>
+        
+        <td>
+            <img ng-src='img/flags/{{stand.Driver.nationality}}.png' title="{{stand.Driver.nationality}}"/>
+            <small>{{stand.Driver.nationality}}</small>
+        </td> 
+        <td><small>{{stand.Constructors[0].name}}</small></td>
+        <td><small>{{stand.points}}</small></td>
+        <td><small>{{stand.wins}}</small></td>
+        <td>+/-</td>
+      </tr>
+    </tbody>
+</table>

@@ -4,10 +4,8 @@ html, body {
     font-weight: 400;
 }
 
-h3 {
-    font-family: "Lobster"; 
-    font-style: normal;
-    font-weight: 400;
+body { 
+    padding-top: 70px; 
 }
 
 tr, td, th{
@@ -18,15 +16,19 @@ small {
     color: #777    
 }
 
-.container-fluid {
-    width:700px;
+
+.app-container {
     margin: 0 auto;
 }
 
-.app-container {
-    width: 700px;
-    margin: 0 auto;
+.nav .navbar-brand {
+    font-family: "Lobster"; 
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: #AA3939;
 }
+
 
 .below-app p {
     line-height: 1.6;

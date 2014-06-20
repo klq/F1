@@ -1,8 +1,4 @@
 <!-- Driver Standings Panel -->
-<div class="search-box pull-right">
-    <input type="text" ng-model="searchTerm" placeholder="Search Driver..."/>
-</div>
-
 <h3>Formula One 2014 Driver Standings</h3>
 <table class="table table-hover table-condensed">
     <thead>
@@ -27,14 +23,15 @@
         <td>
             <div>
                 <span>
-                    <a href="#">{{stand.Driver.givenName}} {{stand.Driver.familyName}}</a>
+                    <a target="_blank" href={{stand.Driver.url}}>{{stand.Driver.givenName}} {{stand.Driver.familyName}}</a>
                 </span>
             <!-- <span><small> - {{stand.Constructors[0].name}}</small></span> -->
             </div>
         </td>
         
         <td>
-            <img ng-src='img/flags/{{stand.Driver.nationality}}.png' title="{{stand.Driver.nationality}}"/>
+            <img ng-src='img/flags/32/{{stand.Driver.nationality}}.png' title="{{stand.Driver.nationality}}" style="height: 20px"/>
+            &nbsp;
             <small>{{stand.Driver.nationality}}</small>
         </td> 
         <td><small>{{stand.Constructors[0].name}}</small></td>

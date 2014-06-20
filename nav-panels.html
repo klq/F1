@@ -1,30 +1,50 @@
-<!-- Nav Panels for Driver and Team Standings -->
 <section ng-controller="PanelController">
-<!--     <nav class="navbar navbar-default"> -->
-       <!--  <div class="container"> -->
-    
-            <!-- Panel Selection List -->
-            <ul class="nav nav-pills">
-                <li ng-class="{ active: isTab(1)}"> 
-                    <a href ng-click="setTab(1)">Driver</a> 
-                </li>
-                <li ng-class="{ active: isTab(2)}">
-                    <a href ng-click="setTab(2)">Team</a>
-                </li>
-                <li ng-class="{ active: isTab(3)}"> 
-                    <a href ng-click="setTab(3)">Race</a> 
-                </li>
-        
-            </ul>
-            
-            <!-- Driver Standings -->
-            <div class="panel" ng-include="'driver-standings.html'" ng-show="isTab(1)">
+    <!-- Nav Bar -->
+    <nav class="nav navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+        <div class="container">
+            <!-- <div class="collapse navbar-collapse"> -->
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" ng-click="setTab(1)">Formula 1</a>
             </div>
-        
-            <div class="panel" ng-include="'team-standings.html'" ng-show="isTab(2)">
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li ng-class="{ active: isTab(1)}" data-toggle="collapse" data-target=".navbar-collapse">
+                        <a href ng-click="setTab(1)">Drivers</a>
+                    </li>
+                    <li ng-class="{ active: isTab(2)}" data-toggle="collapse" data-target=".navbar-collapse">
+                        <a href ng-click="setTab(2)">Teams</a>
+                    </li>
+                    <li ng-class="{ active: isTab(3)}" data-toggle="collapse" data-target=".navbar-collapse">
+                        <a href ng-click="setTab(3)">Races</a>
+                    </li>
+                </ul>
+             
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input ng-model="searchTerm" type="text" class="form-control" placeholder="Search ...">
+                        <label class="sr-only">Label: SearchBox</label>
+                    </div>     
+                </form>
             </div>
-        <!-- </div> -->
-    <!-- </nav> -->
+        </div>
+    </nav>
     
+    <!-- Nav Panels for Driver and Team Standings -->
+    <!-- Driver Standings -->
+    <div class="panel" ng-include="'driver-standings.html'" ng-show="isTab(1)">
+    </div>
+
+    <!-- Team Standings -->
+    <div class="panel" ng-include="'team-standings.html'" ng-show="isTab(2)">
+    </div>
 
 </section>
+

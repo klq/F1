@@ -1,8 +1,4 @@
 <!-- Team Standings Panel -->   
-<div class="search-box pull-right">
-    <input type="text" ng-model="searchTerm" placeholder="Search Team..."/>
-</div>
-
 <h3>Formula One 2014 Team Standings</h3>
 <table class="table table-condensed table-hover">
     <thead>
@@ -14,16 +10,16 @@
       <tr>
         <th>Season: {{season}} Round:{{round}}</th>
         <th>Team</th>
-        <th>Nationality</th>
         <th>Points</th>
         <th>Wins</th>
         <th>+/-</th>
       </tr>
       <tr ng-repeat='stand in team_standings | filter: searchTerm'>
         <th>{{stand.position}}</th>
-        <td>{{stand.Constructor.name}} </td>
         <td>
-            <img ng-src='img/flags/{{stand.Constructor.nationality}}.png' title="{{stand.Constructor.nationality}}"/>
+            <img ng-src='img/flags/32/{{stand.Constructor.nationality}}.png' title="{{stand.Constructor.nationality}}" style="height:20px"/>
+            &nbsp;
+            {{stand.Constructor.name}} 
         </td>
         <td>{{stand.points}}</td>
         <td>{{stand.wins}}</td>
